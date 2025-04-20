@@ -36,3 +36,10 @@ function showToast(message, type = 'success') {
         setTimeout(() => toast.remove(), 500);
     }, 3000);
 }
+
+document.getElementById("btn").addEventListener("click", function () {
+  const contactSection = document.getElementById("contactme");
+  if (contactSection) {
+    contactSection.scrollIntoView({ behavior: "smooth" });
+  }
+});
