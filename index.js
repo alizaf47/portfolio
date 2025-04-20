@@ -43,3 +43,13 @@ document.getElementById("btn").addEventListener("click", function () {
     contactSection.scrollIntoView({ behavior: "smooth" });
   }
 });
+
+
+document.querySelectorAll('.btn-project').forEach(button => {
+  button.addEventListener('click', function () {
+    const pdfPath = this.getAttribute('data-pdf');
+    if (pdfPath) {
+      window.open(pdfPath, '_blank'); // Opens Google Drive PDF in new tab
+    }
+  });
+});
