@@ -53,3 +53,11 @@ document.querySelectorAll('.btn-project').forEach(button => {
     }
   });
 });
+document.querySelectorAll('.btn-project2').forEach(button => {
+  button.addEventListener('click', function () {
+    const pdfPath = this.getAttribute('data-pdf');
+    if (pdfPath) {
+      window.open(pdfPath, '_blank'); // Opens Google Drive PDF in new tab
+    }
+  });
+});
