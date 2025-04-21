@@ -259,6 +259,29 @@
 
         
     </div>
+
+
+              <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+    (function() {
+        emailjs.init("re-opnfo8FyfGINb-");   
+    })();
+
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+
+        var formData = new FormData(this);
+
+        emailjs.sendForm('service_q117bj2', 'template_pg6fhij', this) 
+            .then(function(response) {
+                alert('Message sent successfully!', response);
+            }, function(error) {
+                alert('Failed to send message.', error);
+            });
+    });
+</script>
+
+              
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script src="https://kit.fontawesome.com/58a810656e.js" crossorigin="anonymous">
 
