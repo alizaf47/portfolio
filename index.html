@@ -261,7 +261,7 @@
     </div>
 
 
-<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<!-- <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
     (function() {
         emailjs.init("re-opnfo8FyfGINb-");   
@@ -279,7 +279,28 @@
                 alert('Failed to send message.', error);
             });
     });
+</script> -->
+
+<script>
+    (function() {
+        emailjs.init("re-opnfo8FyfGINb-");   
+    })();
+
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+
+        // Send email via EmailJS
+        emailjs.sendForm('service_q117bj2', 'template_pg6fhij', this)
+            .then(function(response) {
+                console.log('Message sent successfully!', response);
+                alert('Message sent successfully!');
+            }, function(error) {
+                console.error('Error sending email:', error);
+                alert('Failed to send message. Check the console for more details.');
+            });
+    });
 </script>
+
 
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script src="https://kit.fontawesome.com/58a810656e.js" crossorigin="anonymous">
