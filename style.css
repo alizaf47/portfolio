@@ -98,7 +98,7 @@ a{
 .hero-section-heading{
     font-size: 35px;
     color: #ffffff;
-    font-weight: 500;
+    font-weight: 800;
 }
 .role{
     color: #4e45d5;
@@ -107,6 +107,7 @@ a{
 .hero-section-sub-heading{
     font-size: 45px;
     line-height: 45px;
+    font-weight: 800;
 }
 .hero-section-description{
     margin-top: 1rem;
