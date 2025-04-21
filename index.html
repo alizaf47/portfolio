@@ -288,46 +288,45 @@
 </script>
 
 <script>
-    (function() {
+    document.addEventListener('DOMContentLoaded', function() {
         emailjs.init("re-opnfo8FyfGINb-");  // Initialize EmailJS with your user ID
-    })();
 
-    // Add event listener for form submission
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the form from submitting the default way
+        // Add event listener for form submission
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting the default way
 
-        console.log("Form submitted!");  // Log when the form is submitted
+            console.log("Form submitted!");  // Log when the form is submitted
 
-        // Manually extract the form data
-        var formData = new FormData(this);
-        
-        // Log the FormData object to see if it contains values
-        console.log(formData);
+            // Manually extract the form data
+            var formData = new FormData(this);
 
-        // Debugging: Log form data to ensure everything is captured correctly
-        formData.forEach(function(value, key) {
-            console.log(key + ": " + value); // Log form data
-        });
+            // Log the FormData object to see if it contains values
+            console.log(formData);
 
-        // Send the form data to EmailJS using `emailjs.send()`
-        emailjs.send('service_q117bj2', 'template_pg6fhij', {
-            from_name: formData.get('name'),    // Capture 'name' field
-            from_email: formData.get('email'),  // Capture 'email' field
-            subject: formData.get('subject'),  // Capture 'subject' field (if provided)
-            message: formData.get('message')   // Capture 'message' field
-        })
-        .then(function(response) {
-            // Success callback
-            alert('Message sent successfully!');
-            console.log('Success:', response);
-        }, function(error) {
-            // Error callback
-            alert('Failed to send message.');
-            console.error('Error:', error);
+            // Debugging: Log form data to ensure everything is captured correctly
+            formData.forEach(function(value, key) {
+                console.log(key + ": " + value); // Log form data
+            });
+
+            // Send the form data to EmailJS using `emailjs.send()`
+            emailjs.send('service_q117bj2', 'template_pg6fhij', {
+                from_name: formData.get('name'),    // Capture 'name' field
+                from_email: formData.get('email'),  // Capture 'email' field
+                subject: formData.get('subject'),  // Capture 'subject' field (if provided)
+                message: formData.get('message')   // Capture 'message' field
+            })
+            .then(function(response) {
+                // Success callback
+                alert('Message sent successfully!');
+                console.log('Success:', response);
+            }, function(error) {
+                // Error callback
+                alert('Failed to send message.');
+                console.error('Error:', error);
+            });
         });
     });
 </script>
-
 
 
 
