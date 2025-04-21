@@ -297,10 +297,13 @@
     document.getElementById('contact-form').addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent the form from submitting the default way
 
+        console.log("Form submitted!");  // Log when the form is submitted
+
         // Manually extract the form data
         var formData = new FormData(this);
-
-        console.log(formData)
+        
+        // Log the FormData object to see if it contains values
+        console.log(formData);
 
         // Debugging: Log form data to ensure everything is captured correctly
         formData.forEach(function(value, key) {
@@ -325,6 +328,7 @@
         });
     });
 </script>
+
 
 
 
