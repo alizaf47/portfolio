@@ -281,6 +281,10 @@
     });
 </script> -->
 
+<!-- EmailJS script should be loaded first -->
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+<!-- Your custom script should come after -->
 <script>
     (function() {
         emailjs.init("re-opnfo8FyfGINb-");   
@@ -289,17 +293,16 @@
     document.getElementById('contact-form').addEventListener('submit', function(event) {
         event.preventDefault(); 
 
-        // Send email via EmailJS
         emailjs.sendForm('service_q117bj2', 'template_pg6fhij', this)
             .then(function(response) {
-                console.log('Message sent successfully!', response);
                 alert('Message sent successfully!');
             }, function(error) {
-                console.error('Error sending email:', error);
-                alert('Failed to send message. Check the console for more details.');
+                alert('Failed to send message.');
+                console.error('Error:', error);
             });
     });
 </script>
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
